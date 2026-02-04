@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Palette</title>
+    <link rel="icon" href="/logo.jpeg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Be Vietnam Pro"', "sans-serif"],
+            },
+            colors: {
+              brand: {
+                50: "#fff1f2", // Very light rose
+                100: "#ffe4e6", // Light rose
+                200: "#fecdd3", // Soft rose
+                300: "#fda4af", // Accent rose
+                400: "#fb7185", // Primary Brand Color
+                500: "#f43f5e", // Hover state
+                600: "#e11d48",
+                800: "#9f1239", // Dark text
+                900: "#881337",
+              },
+              cream: "#FDFCF8",
+              surface: "#ffffff",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Smooth scrolling for anchor links */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px; /* Offset for fixed header */
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://esm.sh/react@^19.2.4/",
+          "react": "https://esm.sh/react@^19.2.4",
+          "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body
+    class="bg-brand-50 text-slate-700 antialiased selection:bg-brand-200 selection:text-brand-900"
+  >
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
