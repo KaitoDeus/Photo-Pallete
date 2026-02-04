@@ -54,7 +54,7 @@ export const BRANCHES: Branch[] = [
     "name": "Photo Palette - Thủ Đức",
     "area": "Thủ Đức",
     "city": "TP. Hồ Chí Minh",
-    "address": "73A Hoàng Diệu 2, P. TP Linh Trung"
+    "address": "73A Hoàng Diệu 2, Phường Linh Trung"
   },
   {
     "id": 8,
