@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, MapPin, Phone, Facebook } from 'lucide-react';
+import { Instagram, MapPin, Facebook, ArrowUp } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -24,31 +24,34 @@ const Footer: React.FC = () => {
 
   const footerLinks = [
     { name: 'Giới thiệu', path: '/about', type: 'page' },
-    { name: 'Thư viện', path: '/gallery', type: 'page' },
-    { name: 'Bảng giá', path: '/#pricing', type: 'scroll', id: 'pricing' },
-    { name: 'Đánh giá', path: '/#testimonials', type: 'scroll', id: 'testimonials' },
+    { name: 'Bộ sưu tập', path: '/gallery', type: 'page' },
+    { name: 'Dịch vụ', path: '/#features', type: 'scroll', id: 'features' },
+    { name: 'Liên hệ', path: '/contact', type: 'page' },
   ];
 
   return (
-    <footer className="bg-brand-50 pt-16 pb-8 border-t border-brand-100">
+    <footer className="bg-brand-50 pt-12 pb-6 border-t border-brand-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
           
-          <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md rotate-3">
+          {/* Brand Column */}
+          <div className="col-span-1 md:col-span-5 space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm">
                 <img src="/logo.jpeg" alt="Palette Logo" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xl font-bold text-slate-800">Photo Palette</span>
+              <span className="text-lg font-bold text-slate-900">Photo Palette</span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed">
-              Lưu giữ bản sắc riêng của bạn trong không gian sáng tạo và thoải mái nhất.
+              Lưu giữ những khoảnh khắc đẹp nhất của thanh xuân<br/>
+              theo cách riêng của bạn.
             </p>
           </div>
 
-          <div>
-            <h4 className="font-bold text-slate-900 mb-4">Khám Phá</h4>
-            <ul className="space-y-2 text-sm text-slate-600">
+          {/* Discovery Column */}
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold text-slate-900 mb-6 text-sm uppercase tracking-wide">Khám Phá</h4>
+            <ul className="space-y-3 text-sm text-slate-600">
               {footerLinks.map((link) => (
                 <li key={link.name}>
                   <button 
@@ -62,40 +65,39 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold text-slate-900 mb-4">Liên Hệ</h4>
-            <ul className="space-y-3 text-sm text-slate-600">
-              <li className="flex items-center gap-2">
-                <Phone size={16} className="text-brand-400" />
-                <span>+84 90 123 4567</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={16} className="text-brand-400 mt-0.5" />
+          {/* Contact Column */}
+          <div className="col-span-1 md:col-span-3">
+            <h4 className="font-bold text-slate-900 mb-6 text-sm uppercase tracking-wide">Liên Hệ</h4>
+            <ul className="space-y-4 text-sm text-slate-600">
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-400 shadow-sm border border-brand-50 mt-1">
+                  <MapPin size={14} />
+                </div>
                 <div>
-                   <span className="block mb-1 font-medium">Hệ thống 24 chi nhánh</span>
-                   <button 
+                  <span className="block mb-1 font-medium">Hệ thống 24 chi nhánh</span>
+                  <button 
                       onClick={() => { navigate('/about'); window.scrollTo(0,0); }}
-                      className="text-brand-500 hover:text-brand-600 font-medium hover:underline text-xs flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 transition-colors"
-                   >
+                      className="text-brand-500 hover:text-brand-600 font-bold text-xs flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 transition-all hover:translate-x-1"
+                  >
                       Tìm chi nhánh gần bạn &rarr;
-                   </button>
+                  </button>
                 </div>
               </li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold text-slate-900 mb-4">Theo Dõi</h4>
+          {/* Social Column */}
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold text-slate-900 mb-6 text-sm uppercase tracking-wide">Theo Dõi</h4>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/photopalette_vn/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-500 hover:bg-brand-400 hover:text-white transition-all">
-                <Instagram size={20} />
+              <a href="https://www.instagram.com/photopalette_vn/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white border border-brand-50 flex items-center justify-center text-slate-400 hover:text-brand-500 hover:border-brand-200 hover:shadow-sm transition-all">
+                <Instagram size={18} />
               </a>
-              <a href="https://www.tiktok.com/@photopalette_vn" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-500 hover:bg-brand-400 hover:text-white transition-all">
-                {/* Custom TikTok Icon since it might not be in the current Lucide version */}
+              <a href="https://www.tiktok.com/@photopalette_vn" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white border border-brand-50 flex items-center justify-center text-slate-400 hover:text-brand-500 hover:border-brand-200 hover:shadow-sm transition-all">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -106,15 +108,23 @@ const Footer: React.FC = () => {
                   <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                 </svg>
               </a>
-              <a href="https://www.facebook.com/photopalettevn" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-500 hover:bg-brand-400 hover:text-white transition-all">
-                <Facebook size={20} />
+              <a href="https://www.facebook.com/photopalettevn" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white border border-brand-50 flex items-center justify-center text-slate-400 hover:text-brand-500 hover:border-brand-200 hover:shadow-sm transition-all">
+                <Facebook size={18} />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-slate-100 pt-8 text-center text-slate-400 text-sm">
-          <p>© {new Date().getFullYear()} Photo Palette</p>
+        <div className="border-t border-brand-100/50 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <p className="text-slate-400 font-medium">© 2026 Photo Palette. All rights reserved.</p>
+          
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-2 text-slate-500 hover:text-brand-500 transition-colors font-semibold group px-4 py-2 hover:bg-white rounded-full"
+          >
+            Back to Top
+            <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
+          </button>
         </div>
       </div>
     </footer>
