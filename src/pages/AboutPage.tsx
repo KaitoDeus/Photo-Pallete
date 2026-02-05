@@ -126,9 +126,9 @@ const AboutPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Hệ thống Chi Nhánh</h2>
           </Reveal>
 
-          <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden h-[700px] flex flex-col lg:flex-row">
+          <div className="flex flex-col lg:flex-row gap-6 lg:h-[700px]">
             {/* Left Col: Search & List */}
-            <div className="lg:w-1/3 flex flex-col h-full border-r border-slate-100">
+            <div className="w-full lg:w-1/3 bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col h-[600px] lg:h-full">
                {/* Search Form */}
                <div className="bg-brand-50/50 p-6 border-b border-brand-100">
                   <div className="space-y-4">
@@ -197,7 +197,7 @@ const AboutPage: React.FC = () => {
             </div>
 
             {/* Right Col: Google Map */}
-            <div className="lg:w-2/3 h-full bg-slate-100 relative">
+            <div className="w-full lg:w-2/3 bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden h-[500px] lg:h-full relative">
                {selectedBranch ? (
                   <iframe 
                      width="100%" 

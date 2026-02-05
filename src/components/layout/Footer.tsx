@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
   const footerLinks = [
     { name: 'Giới thiệu', path: '/about', type: 'page' },
     { name: 'Bộ sưu tập', path: '/gallery', type: 'page' },
-    { name: 'Dịch vụ', path: '/#features', type: 'scroll', id: 'features' },
+    { name: 'Kho Frame', path: '/frames', type: 'page' },
     { name: 'Liên hệ', path: '/contact', type: 'page' },
   ];
 
