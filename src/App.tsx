@@ -8,12 +8,14 @@ import GalleryPage from './pages/GalleryPage';
 import FrameLibraryPage from './pages/FrameLibraryPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import DisclaimerModal from './components/common/DisclaimerModal';
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="min-h-screen bg-brand-50 overflow-x-hidden font-sans flex flex-col transition-all duration-300">
         <Navbar />
+        <DisclaimerModal />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
