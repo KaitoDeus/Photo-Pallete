@@ -1,19 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Scale, ShieldCheck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const DisclaimerModal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const hasSeen = localStorage.getItem('has_seen_disclaimer');
+    const isReadingPolicy = location.pathname === '/privacy';
+    const isAtHome = location.pathname === '/';
+
     if (!hasSeen) {
-      // Small delay to ensure smooth entrance animation
-      const timer = setTimeout(() => setIsOpen(true), 500);
-      return () => clearTimeout(timer);
+      if (isReadingPolicy) {
+        // Allow viewing policy without modal
+        setIsOpen(false);
+      } else if (!isAtHome) {
+        // If user tries to go anywhere else (About, Gallery, etc.) without agreeing,
+        // force them back to the home page where the modal is active.
+        navigate('/', { replace: true });
+        setIsOpen(true);
+      } else {
+        // Show modal on home page
+        setIsOpen(true);
+      }
+    } else {
+      setIsOpen(false);
     }
-  }, []);
+  }, [location.pathname, navigate]);
 
   const handleClose = () => {
     localStorage.setItem('has_seen_disclaimer', 'true');
@@ -68,7 +84,7 @@ const DisclaimerModal: React.FC = () => {
             <label className="flex items-center gap-3 cursor-pointer group p-2 hover:bg-slate-50 rounded-lg transition-colors">
                 <div className="relative flex items-center justify-center">
                     <input 
-                        type="checkbox"
+                        type="checkbox" 
                         className="peer sr-only"
                         checked={isChecked}
                         onChange={(e) => setIsChecked(e.target.checked)}
@@ -93,7 +109,7 @@ const DisclaimerModal: React.FC = () => {
         {/* Footer */}
         <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row gap-3 justify-end items-center">
              <Link 
-                to="/privacy" 
+                to="/privacy?mode=read" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-brand-600 font-medium hover:underline hover:text-brand-700 px-2"
@@ -114,6 +130,7 @@ const DisclaimerModal: React.FC = () => {
                 Đồng ý & Tiếp tục
             </button>
         </div>
+
       </div>
     </div>
   );
