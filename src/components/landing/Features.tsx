@@ -27,7 +27,7 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-brand-50">
+    <section id="features" className="py-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -43,13 +43,13 @@ const Features: React.FC = () => {
             <Reveal 
               key={index}
               delay={index * 0.1}
-              className="p-8 rounded-[2rem] bg-white border border-brand-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group h-full"
+              className="p-8 rounded-[2rem] bg-white/60 backdrop-blur-md border border-white/50 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group h-full flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-20 h-20 bg-brand-50 rounded-[2.5rem] flex items-center justify-center mb-8 shadow-inner group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-float-slow">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">{feature.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold text-slate-800 mb-4">{feature.title}</h3>
+              <p className="text-slate-500 leading-relaxed font-medium">{feature.description}</p>
             </Reveal>
           ))}
         </div>

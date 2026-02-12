@@ -28,11 +28,11 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-brand-50 relative overflow-hidden">
+    <section className="py-24 bg-transparent relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-0">
-        <div className="absolute top-[10%] left-[-5%] w-72 h-72 bg-brand-200/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-[10%] right-[-5%] w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-pulse delay-700" />
+        <div className="absolute top-[10%] left-[-5%] w-72 h-72 bg-brand-200/20 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-[10%] right-[-5%] w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-float-reverse" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

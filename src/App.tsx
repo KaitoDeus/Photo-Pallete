@@ -9,11 +9,13 @@ import FrameLibraryPage from './pages/FrameLibraryPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import DisclaimerModal from './components/common/DisclaimerModal';
+import Background3D from './components/layout/Background3D';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-brand-50 overflow-x-hidden font-sans flex flex-col transition-all duration-300 md:pl-20">
+      <div className="min-h-screen overflow-x-hidden font-sans flex flex-col transition-all duration-300 md:pl-20 relative">
+        <Background3D />
         <Navbar />
         <DisclaimerModal />
         <main className="flex-grow">

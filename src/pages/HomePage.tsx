@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
   }, [hash]);
 
   return (
-    <div className="bg-brand-50 overflow-x-hidden font-sans">
+    <div className="bg-transparent overflow-x-hidden font-sans">
       <Hero />
       <Features />
       <Gallery />

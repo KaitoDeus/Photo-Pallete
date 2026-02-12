@@ -23,11 +23,11 @@ const Hero: React.FC = () => {
   }, [heroImages.length]);
 
   return (
-    <section className="relative pt-16 pb-20 lg:pt-28 lg:pb-36 overflow-hidden bg-brand-50">
+    <section className="relative pt-16 pb-20 lg:pt-28 lg:pb-36 overflow-hidden bg-transparent">
       {/* Premium Background Elements */}
       <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-brand-100/20 via-transparent to-white/30 -z-10 pointer-events-none" />
-      <div className="absolute top-[-15%] right-[-10%] w-[500px] h-[500px] bg-brand-200/20 rounded-full blur-[120px] -z-10 animate-pulse" />
-      <div className="absolute bottom-[5%] right-[5%] w-[400px] h-[400px] bg-blue-100/20 rounded-full blur-[100px] -z-10 animate-pulse delay-1000" />
+      <div className="absolute top-[-15%] right-[-10%] w-[500px] h-[500px] bg-brand-200/20 rounded-full blur-[120px] -z-10 animate-float-slow" />
+      <div className="absolute bottom-[5%] right-[5%] w-[400px] h-[400px] bg-blue-100/20 rounded-full blur-[100px] -z-10 animate-float-reverse shadow-2xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
