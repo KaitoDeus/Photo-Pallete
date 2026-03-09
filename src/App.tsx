@@ -13,7 +13,7 @@ import Background3D from "./components/layout/Background3D";
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen overflow-x-hidden font-sans flex flex-col transition-all duration-300 md:pl-20 relative">
+      <div className="min-h-screen overflow-x-hidden font-sans flex flex-col transition-all duration-300 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0 md:pl-20 relative">
         <Background3D />
         <Navbar />
         <DisclaimerModal />
