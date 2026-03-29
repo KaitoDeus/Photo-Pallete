@@ -19,6 +19,8 @@ import happyBirthdayFrame from "../../../assets/frames/happy-birthday_1x4.webp";
 import happyBirthdayGridFrame from "../../../assets/frames/happy-birthday_2x2.webp";
 import justAGirlFrame from "../../../assets/frames/just-a-girl-just-perfect_1x4.webp";
 import justAGirlGridFrame from "../../../assets/frames/just-a-girl-just-perfect_2x2.webp";
+import layeredKeepsake1x4 from "../../../assets/frames/layered-keepsake_1x4.webp";
+import layeredKeepsake2x2 from "../../../assets/frames/layered-keepsake_2x2.webp";
 
 // New Frames
 import beauty1x4 from "../../../assets/frames/an-endless-immersion-into-beauty_1x4.webp";
@@ -27,6 +29,22 @@ import starlight1x4 from "../../../assets/frames/hidden-in-starlight_1x4.webp";
 import starlight2x2 from "../../../assets/frames/hidden-in-starlight_2x2.webp";
 import happyAlways1x4 from "../../../assets/frames/happy-always_1x4.webp";
 import happyAlways2x2 from "../../../assets/frames/happy-always_2x2.webp";
+
+// Added Batch Frames
+import basketballTournament1x4 from "../../../assets/frames/basketball-tournament_1x4.webp";
+import basketballTournament2x2 from "../../../assets/frames/basketball-tournament_2x2.webp";
+import berryPop1x4 from "../../../assets/frames/berry-pop_1x4.webp";
+import berryPop2x2 from "../../../assets/frames/berry-pop_2x2.webp";
+import dreamySugarRush1x4 from "../../../assets/frames/dreamy-sugar-rush_1x4.webp";
+import dreamySugarRush2x2 from "../../../assets/frames/dreamy-sugar-rush_2x2.webp";
+import guestCheck1x4 from "../../../assets/frames/guest-check_1x4.webp";
+import guestCheck2x2 from "../../../assets/frames/guest-check_2x2.webp";
+import luckyCloveeManifest1x4 from "../../../assets/frames/lucky-clovee-manifest_1x4.webp";
+import luckyCloveeManifest2x2 from "../../../assets/frames/lucky-clovee-manifest_2x2.webp";
+import pinkDiary1x4 from "../../../assets/frames/pink-diary-a-little-world-of-sweet-moments_1x4.webp";
+import pinkDiary2x2 from "../../../assets/frames/pink-diary-a-little-world-of-sweet-moments_2x2.webp";
+import specialDelivery1x4 from "../../../assets/frames/special-delivery_1x4.webp";
+import specialDelivery2x2 from "../../../assets/frames/special-delivery_2x2.webp";
 
 
 export const FRAMES: Frame[] = [
@@ -650,5 +668,322 @@ export const FRAMES: Frame[] = [
       ],
     },
   },
+  {
+    id: "layered-keepsake-1x4",
+    name: "Layered Keepsake",
+    layout: "1x4",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: layeredKeepsake1x4,
+    customMetrics: {
+      w: 332,
+      h: 1021,
+      pt: 0,
+      pb: 0,
+      pl: 0,
+      pr: 0,
+      rowGap: 0,
+      imageSlots: [
+        { x: 30, y: 32, w: 272, h: 200 },
+        { x: 30, y: 256, w: 272, h: 200 },
+        { x: 26, y: 476, w: 280, h: 205 },
+        { x: 28, y: 704, w: 276, h: 205 },
+      ],
+    },
+  },
+  {
+    id: "layered-keepsake-2x2",
+    name: "Layered Keepsake",
+    layout: "2x2",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: layeredKeepsake2x2,
+    customMetrics: {
+      w: 664,
+      h: 1021,
+      pt: 0,
+      pb: 0,
+      pl: 0,
+      pr: 0,
+      rowGap: 0,
+      colGap: 0,
+      imageSlots: [
+        { x: 28, y: 64, w: 275, h: 405 },
+        { x: 348, y: 36, w: 284, h: 418 },
+        { x: 25, y: 518, w: 280, h: 422 },
+        { x: 350, y: 520, w: 285, h: 426 },
+      ],
+    },
+  },
+  {
+    id: "basketball-tournament",
+    name: "Basketball Tournament",
+    layout: "1x4",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: basketballTournament1x4,
+    customMetrics: {
+      w: 287, h: 845, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 27, y: 28, w: 235, h: 172 },
+        { x: 27, y: 216, w: 235, h: 172 },
+        { x: 27, y: 403, w: 235, h: 153 },
+        { x: 27, y: 602, w: 235, h: 159 }
+      ],
+    },
+  },
+  {
+    id: "basketball-tournament-grid",
+    name: "Basketball Tournament",
+    layout: "2x2",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: basketballTournament2x2,
+    customMetrics: {
+      w: 564, h: 846, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 30, y: 79, w: 239, h: 337 },
+        { x: 296, y: 79, w: 241, h: 352 },
+        { x: 30, y: 470, w: 239, h: 331 },
+        { x: 296, y: 457, w: 241, h: 335 }
+      ],
+    },
+  },
+  {
+    id: "berry-pop",
+    name: "Berry Pop!",
+    layout: "1x4",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: berryPop1x4,
+    customMetrics: {
+      w: 311, h: 915, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 53, y: 45, w: 225, h: 164 },
+        { x: 37, y: 241, w: 233, h: 168 },
+        { x: 69, y: 452, w: 149, h: 167 },
+        { x: 64, y: 643, w: 193, h: 181 }
+      ],
+    },
+  },
+  {
+    id: "berry-pop-grid",
+    name: "Berry Pop!",
+    layout: "2x2",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: berryPop2x2,
+    customMetrics: {
+      w: 620, h: 924, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 39, y: 101, w: 254, h: 347 },
+        { x: 329, y: 124, w: 251, h: 338 },
+        { x: 60, y: 513, w: 212, h: 344 },
+        { x: 326, y: 501, w: 260, h: 382 }
+      ],
+    },
+  },
+  {
+    id: "dreamy-sugar-rush",
+    name: "Dreamy Sugar Rush",
+    layout: "1x4",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: dreamySugarRush1x4,
+    customMetrics: {
+      w: 331, h: 976, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 27, y: 54, w: 276, h: 175 },
+        { x: 29, y: 253, w: 271, h: 188 },
+        { x: 32, y: 487, w: 265, h: 170 },
+        { x: 32, y: 690, w: 242, h: 157 }
+      ],
+    },
+  },
+  {
+    id: "dreamy-sugar-rush-grid",
+    name: "Dreamy Sugar Rush",
+    layout: "2x2",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: dreamySugarRush2x2,
+    customMetrics: {
+      w: 658, h: 977, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 50, y: 121, w: 254, h: 368 },
+        { x: 341, y: 94, w: 279, h: 408 },
+        { x: 36, y: 525, w: 266, h: 375 },
+        { x: 350, y: 560, w: 262, h: 360 }
+      ],
+    },
+  },
+  {
+    id: "guest-check",
+    name: "Guest Check",
+    layout: "1x4",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: guestCheck1x4,
+    customMetrics: {
+      w: 284, h: 852, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 22, y: 28, w: 239, h: 173 },
+        { x: 22, y: 216, w: 239, h: 173 },
+        { x: 22, y: 404, w: 239, h: 173 },
+        { x: 21, y: 592, w: 240, h: 173 }
+      ],
+    },
+  },
+  {
+    id: "guest-check-grid",
+    name: "Guest Check",
+    layout: "2x2",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: guestCheck2x2,
+    customMetrics: {
+      w: 571, h: 850, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 29, y: 80, w: 244, h: 357 },
+        { x: 297, y: 80, w: 244, h: 357 },
+        { x: 30, y: 460, w: 243, h: 354 },
+        { x: 297, y: 458, w: 242, h: 356 }
+      ],
+    },
+  },
+  {
+    id: "lucky-clovee-manifest",
+    name: "Lucky Clovee Manifest",
+    layout: "1x4",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: luckyCloveeManifest1x4,
+    customMetrics: {
+      w: 298, h: 865, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 27, y: 35, w: 243, h: 170 },
+        { x: 53, y: 219, w: 217, h: 176 },
+        { x: 27, y: 409, w: 243, h: 176 },
+        { x: 27, y: 599, w: 243, h: 176 }
+      ],
+    },
+  },
+  {
+    id: "lucky-clovee-manifest-grid",
+    name: "Lucky Clovee Manifest",
+    layout: "2x2",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: luckyCloveeManifest2x2,
+    customMetrics: {
+      w: 582, h: 868, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 33, y: 85, w: 246, h: 359 },
+        { x: 304, y: 85, w: 245, h: 359 },
+        { x: 33, y: 468, w: 245, h: 356 },
+        { x: 304, y: 468, w: 245, h: 359 }
+      ],
+    },
+  },
+  {
+    id: "special-delivery",
+    name: "Special Delivery",
+    layout: "1x4",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: specialDelivery1x4,
+    customMetrics: {
+      w: 292, h: 871, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 22, y: 51, w: 247, h: 156 },
+        { x: 23, y: 221, w: 246, h: 179 },
+        { x: 22, y: 414, w: 247, h: 180 },
+        { x: 22, y: 606, w: 247, h: 180 }
+      ],
+    },
+  },
+  {
+    id: "special-delivery-grid",
+    name: "Special Delivery",
+    layout: "2x2",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: specialDelivery2x2,
+    customMetrics: {
+      w: 583, h: 869, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 29, y: 88, w: 251, h: 358 },
+        { x: 303, y: 86, w: 252, h: 360 },
+        { x: 29, y: 466, w: 252, h: 344 },
+        { x: 302, y: 466, w: 252, h: 340 }
+      ],
+    },
+  },
+  {
+    id: "pink-diary",
+    name: "PINK DIARY – A LITTLE WORLD OF SWEET MOMENTS",
+    layout: "1x4",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: pinkDiary1x4,
+    customMetrics: {
+      w: 299, h: 864, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 27, y: 35, w: 243, h: 170 },
+        { x: 27, y: 219, w: 243, h: 176 },
+        { x: 27, y: 409, w: 243, h: 176 },
+        { x: 27, y: 599, w: 243, h: 176 }
+      ],
+    },
+  },
+  {
+    id: "pink-diary-grid",
+    name: "PINK DIARY – A LITTLE WORLD OF SWEET MOMENTS",
+    layout: "2x2",
+    category: "",
+    color: "bg-slate-50",
+    borderColor: "border-slate-200",
+    textColor: "text-slate-600",
+    overlayImage: pinkDiary2x2,
+    customMetrics: {
+      w: 584, h: 867, pt: 0, pb: 0, pl: 0, pr: 0, rowGap: 0, colGap: 0,
+      imageSlots: [
+        { x: 33, y: 85, w: 246, h: 359 },
+        { x: 304, y: 85, w: 245, h: 359 },
+        { x: 33, y: 468, w: 245, h: 356 },
+        { x: 304, y: 468, w: 245, h: 359 }
+      ],
+    },
+  }
 ];
 

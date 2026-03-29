@@ -19,6 +19,7 @@ const CATEGORIES = [
   { value: "TET HOLIDAY", label: "TET HOLIDAY" },
   { value: "BIRTHDAY", label: "BIRTHDAY" },
   { value: "8/3", label: "8/3" },
+  { value: "KEEPSAKE", label: "KEEPSAKE" },
 ];
 
 const FrameSelectionModal: React.FC<FrameSelectionModalProps> = ({
