@@ -8,7 +8,7 @@ import ProcessingStep from "./components/ProcessingStep";
 import ResultStep from "./components/ResultStep";
 
 const PhotoBooth: React.FC = () => {
-  const { state, refs, actions } = usePhotoBooth();
+  const { state, refs: { videoRef, canvasRef }, actions } = usePhotoBooth();
 
   const renderStep = () => {
     switch (state.step) {
@@ -21,7 +21,7 @@ const PhotoBooth: React.FC = () => {
             selectedFrame={state.selectedFrame}
             countDownDuration={state.countDownDuration}
             permissionDenied={state.permissionDenied}
-            videoRef={refs.videoRef}
+            videoRef={videoRef}
             isMirrored={state.isMirrored}
             isRecapEnabled={state.isRecapEnabled}
             onSelectLayout={actions.setSelectedLayout}
@@ -47,7 +47,7 @@ const PhotoBooth: React.FC = () => {
             selectedFrame={state.selectedFrame}
             countDownDuration={state.countDownDuration}
             permissionDenied={state.permissionDenied}
-            videoRef={refs.videoRef}
+            videoRef={videoRef}
             isMirrored={state.isMirrored}
             isRecapEnabled={state.isRecapEnabled}
             onSelectLayout={actions.setSelectedLayout}
@@ -90,7 +90,7 @@ const PhotoBooth: React.FC = () => {
       id="photobooth"
       className="py-20 bg-transparent relative overflow-hidden min-h-[600px] flex items-center"
     >
-      <canvas ref={refs.canvasRef} className="hidden" />
+      <canvas ref={canvasRef} className="hidden" />
 
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-10 right-10 w-64 h-64 bg-brand-200 rounded-full blur-3xl opacity-30 animate-float-slow"></div>

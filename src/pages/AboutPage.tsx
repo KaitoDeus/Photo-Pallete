@@ -101,11 +101,6 @@ const AboutPage: React.FC = () => {
   const [selectedBranch, setSelectedBranch] = React.useState(BRANCHES[0]);
   const [isMapLoading, setIsMapLoading] = React.useState(true);
 
-  // Reset loading state when branch changes
-  useEffect(() => {
-    setIsMapLoading(true);
-  }, [selectedBranch]);
-
   // Extract unique cities
   const cities = useMemo(() => {
     return Array.from(new Set(BRANCHES.map((b) => b.city))).sort();
@@ -133,13 +128,9 @@ const AboutPage: React.FC = () => {
     setFilteredBranches(results);
     if (results.length > 0) {
       setSelectedBranch(results[0]);
+      setIsMapLoading(true);
     }
   };
-
-  // Reset district when city changes
-  useEffect(() => {
-    setSelectedDistrict("");
-  }, [selectedCity]);
 
   return (
     <div className="pt-20 min-h-screen bg-brand-50/30">
@@ -242,7 +233,10 @@ const AboutPage: React.FC = () => {
                     <CustomDropdown
                       value={selectedCity}
                       options={cities}
-                      onChange={setSelectedCity}
+                      onChange={(val) => {
+                        setSelectedCity(val);
+                        setSelectedDistrict("");
+                      }}
                       placeholder="Tất cả chi nhánh"
                     />
                   </div>
@@ -272,7 +266,10 @@ const AboutPage: React.FC = () => {
                 {filteredBranches.map((branch) => (
                   <div
                     key={branch.id}
-                    onClick={() => setSelectedBranch(branch)}
+                    onClick={() => {
+                        setSelectedBranch(branch);
+                        setIsMapLoading(true);
+                    }}
                     className={`p-4 rounded-xl border cursor-pointer transition-all duration-200 ${selectedBranch?.id === branch.id ? "bg-brand-500 border-brand-500 ring-2 ring-brand-200 shadow-md" : "bg-white border-slate-100 hover:border-brand-200 hover:shadow-sm"}`}
                   >
                     <h4

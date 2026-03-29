@@ -79,9 +79,8 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
 
 const FrameCard: React.FC<{
   frame: Frame;
-  index: number;
   onClick: (filled: boolean) => void;
-}> = ({ frame, index, onClick }) => {
+}> = ({ frame, onClick }) => {
   return (
     <div key={frame.id} className="group">
       <div className="bg-white rounded-[40px] p-4 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-slate-100 hover:border-brand-200 flex flex-col items-center relative overflow-hidden h-full">
@@ -179,7 +178,7 @@ const FrameLibraryPage: React.FC = () => {
     return matchesCategory && matchesLayout && matchesSearch;
   });
 
-  let sortedFrames = [...filteredFrames];
+  const sortedFrames = [...filteredFrames];
   if (activeSort === "Mới nhất") {
     sortedFrames.reverse();
   }
@@ -289,7 +288,6 @@ const FrameLibraryPage: React.FC = () => {
               <FrameCard
                 key={frame.id}
                 frame={frame}
-                index={index}
                 onClick={(filled) => {
                   setSelectedIndex(index);
                   setPreviewFilled(filled);

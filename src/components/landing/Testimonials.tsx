@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Star } from "lucide-react";
 
 const ALL_REVIEWS = [
@@ -101,15 +101,11 @@ const ALL_REVIEWS = [
 ];
 
 const Testimonials: React.FC = () => {
-  const [displayedReviews, setDisplayedReviews] = useState<typeof ALL_REVIEWS>(
-    [],
-  );
-
-  useEffect(() => {
+  const [displayedReviews] = useState<typeof ALL_REVIEWS>(() => {
     // Randomly select 3 unique reviews
     const shuffled = [...ALL_REVIEWS].sort(() => 0.5 - Math.random());
-    setDisplayedReviews(shuffled.slice(0, 3));
-  }, []);
+    return shuffled.slice(0, 3);
+  });
 
   return (
     <section id="testimonials" className="py-20 bg-transparent">

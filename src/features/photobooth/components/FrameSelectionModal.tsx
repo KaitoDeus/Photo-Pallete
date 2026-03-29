@@ -111,10 +111,7 @@ const FrameSelectionModal: React.FC<FrameSelectionModalProps> = ({
           {filteredFrames.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {filteredFrames.map((frame) => {
-                // Determine aspect ratio for the preview content
-                let contentAspect = "aspect-[1/3]"; // Default strip
-                if (frame.layout === "2x2" || frame.layout === "1x1")
-                  contentAspect = "aspect-[3/4]";
+
 
                 // Unified card container aspect ratio to keep grid uniform
                 const cardAspect = "aspect-[2/3]";

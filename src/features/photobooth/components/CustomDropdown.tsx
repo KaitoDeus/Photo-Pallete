@@ -9,7 +9,7 @@ export interface DropdownOption {
 export interface CustomDropdownProps {
   value: string | number;
   options: DropdownOption[];
-  onChange: (value: any) => void;
+  onChange: (value: string | number) => void;
   disabled?: boolean;
   activeColorClass?: string;
   minWidth?: string;

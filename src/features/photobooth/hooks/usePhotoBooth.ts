@@ -33,7 +33,7 @@ export const usePhotoBooth = () => {
       setSelectedFrame({
         id: `fallback-${frameLayoutStr}`,
         name: "Basic Frame",
-        layout: frameLayoutStr as any,
+        layout: frameLayoutStr as Frame["layout"],
         category: "BASIC",
         color: "bg-white",
         borderColor: "border-slate-200",
@@ -108,9 +108,6 @@ export const usePhotoBooth = () => {
       streamRef.current = null;
     }
   };
-
-  const toggleMirrored = () => setIsMirrored((prev) => !prev);
-  const toggleRecap = () => setIsRecapEnabled((prev) => !prev);
 
   const getTargetDimensions = useCallback(() => {
     let targetWidth, targetHeight;
@@ -199,7 +196,7 @@ export const usePhotoBooth = () => {
       }
     }
     return null;
-  }, [isMirrored]);
+  }, [isMirrored, getTargetDimensions]);
 
   const startRecorder = () => {
     if (isRecapEnabled) {
@@ -277,8 +274,6 @@ export const usePhotoBooth = () => {
         const stream = canvas.captureStream(30);
 
         recordedChunksRef.current = [];
-        const options = { mimeType: "video/webm;codecs=vp9" };
-
         // Check if MIME type is supported, fallback if necessary
         const mimeType = MediaRecorder.isTypeSupported("video/webm;codecs=vp9")
           ? "video/webm;codecs=vp9"
@@ -428,12 +423,6 @@ export const usePhotoBooth = () => {
     setLastPhoto(null);
     startCamera();
     setStep("SELECT_FRAME");
-  };
-
-  const goToStart = () => {
-    setStep("INTRO");
-    setPhotos([]);
-    setLastPhoto(null);
   };
 
   return {

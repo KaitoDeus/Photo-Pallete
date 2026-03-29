@@ -13,22 +13,24 @@ const DisclaimerModal: React.FC = () => {
     const isReadingPolicy = location.pathname === "/privacy";
     const isAtHome = location.pathname === "/";
 
-    if (!hasSeen) {
-      if (isReadingPolicy) {
-        // Allow viewing policy without modal
-        setIsOpen(false);
-      } else if (!isAtHome) {
-        // If user tries to go anywhere else (About, Gallery, etc.) without agreeing,
-        // force them back to the home page where the modal is active.
-        navigate("/", { replace: true });
-        setIsOpen(true);
+    setTimeout(() => {
+      if (!hasSeen) {
+        if (isReadingPolicy) {
+          // Allow viewing policy without modal
+          setIsOpen(false);
+        } else if (!isAtHome) {
+          // If user tries to go anywhere else (About, Gallery, etc.) without agreeing,
+          // force them back to the home page where the modal is active.
+          navigate("/", { replace: true });
+          setIsOpen(true);
+        } else {
+          // Show modal on home page
+          setIsOpen(true);
+        }
       } else {
-        // Show modal on home page
-        setIsOpen(true);
+        setIsOpen(false);
       }
-    } else {
-      setIsOpen(false);
-    }
+    }, 0);
   }, [location.pathname, navigate]);
 
   const handleClose = () => {

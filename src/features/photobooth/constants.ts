@@ -1,5 +1,5 @@
 import React from "react";
-import { Columns, Grid, Layout, RectangleVertical } from "lucide-react";
+import { Columns, Grid, RectangleVertical } from "lucide-react";
 import { PhotoLayout } from "./types";
 
 export const LAYOUTS: PhotoLayout[] = [
