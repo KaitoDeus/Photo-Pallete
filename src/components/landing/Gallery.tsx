@@ -12,32 +12,32 @@ const Gallery: React.FC = () => {
     {
       id: 1,
       src: insta1,
-      link: "https://www.instagram.com/p/DVTQKaTAjDE/",
+      link: "https://www.instagram.com/p/DWGwJ-QlVmW/",
     },
     {
       id: 2,
       src: insta2,
-      link: "https://www.instagram.com/p/DVQynSojzu7/",
+      link: "https://www.instagram.com/p/DWLZUyaDXn2/",
     },
     {
       id: 3,
       src: insta3,
-      link: "https://www.instagram.com/p/DVLhUs-mfLw/",
+      link: "https://www.instagram.com/p/DVTQKaTAjDE/",
     },
     {
       id: 4,
       src: insta4,
-      link: "https://www.instagram.com/p/DVJDyM-D6mC/",
+      link: "https://www.instagram.com/p/DWbYgJdEnoD/",
     },
     {
       id: 5,
       src: insta5,
-      link: "https://www.instagram.com/p/DUp-RVqD14e/",
+      link: "https://www.instagram.com/p/DWWPVbOEjTl/",
     },
     {
       id: 6,
       src: insta6,
-      link: "https://www.instagram.com/p/DUnlzUdjxyD/",
+      link: "https://www.instagram.com/p/DWRDE--krxu/",
     },
   ];
 

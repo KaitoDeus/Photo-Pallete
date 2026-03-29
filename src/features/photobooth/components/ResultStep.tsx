@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Sparkles, RefreshCw, Video, X, Download, Layout } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Sparkles, RefreshCw, Video, X, Download, Layout, Info } from "lucide-react";
 import Button from "../../../components/common/Button";
 import { LayoutType, Frame } from "../types";
 import { FrameStrip } from "./FrameStrip";
@@ -28,18 +28,60 @@ const ResultStep: React.FC<ResultStepProps> = ({
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const [isFrameModalOpen, setIsFrameModalOpen] = useState(false);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [isIOS, setIsIOS] = useState(false);
+
+  useEffect(() => {
+    // Detect iOS devices
+    const isIOSDevice = 
+      /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    setIsIOS(isIOSDevice);
+  }, []);
+
+  const dataURLtoBlob = (dataurl: string) => {
+    const arr = dataurl.split(',');
+    const match = arr[0].match(/:(.*?);/);
+    if (!match) return new Blob();
+    const mime = match[1];
+    const bstr = atob(arr[1]);
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n);
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], { type: mime });
+  };
 
   const handleDownload = async () => {
     if (isExporting) return;
     setIsExporting(true);
     try {
       const dataUrl = await exportFinalImage(selectedFrame, photos);
+      
+      // On iOS, automatic download is often blocked or fails with large data URLs.
+      // The best experience is to show the image in a modal so they can long-press to save.
+      if (isIOS) {
+        setPreviewImage(dataUrl);
+        setIsExporting(false);
+        return;
+      }
+
+      // For other platforms, use the Blob + download attribute method
+      const blob = dataURLtoBlob(dataUrl);
+      const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
-      link.href = dataUrl;
+      link.href = url;
       link.download = `photo-palette-${new Date().getTime()}.jpg`;
       document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
+      
+      // Cleanup
+      setTimeout(() => {
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }, 100);
+
     } catch (err) {
       console.error("Download failed:", err);
       alert("Có lỗi khi tải ảnh về, vui lòng thử lại!");
@@ -150,6 +192,42 @@ const ResultStep: React.FC<ResultStepProps> = ({
               autoPlay
               className="w-full h-full object-contain"
             />
+          </div>
+        </div>
+      )}
+
+      {/* iOS Download/Save Preview Modal */}
+      {previewImage && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-300">
+          <div className="relative flex flex-col items-center max-w-lg w-full gap-4">
+            <button
+              onClick={() => setPreviewImage(null)}
+              className="absolute -top-12 right-0 text-white/80 hover:text-white flex items-center gap-2 font-medium"
+            >
+              Đóng <X size={24} />
+            </button>
+            
+            <div className="bg-white/10 text-white p-4 rounded-xl flex items-start gap-3 w-full border border-white/20">
+              <Info className="flex-shrink-0 text-brand-300" size={20} />
+              <p className="text-sm">
+                <strong>iPhone/iPad:</strong> Nhấn giữ vào ảnh bên dưới và chọn <strong>"Lưu vào Ảnh"</strong> (Save to Photos) để tải về máy nhé!
+              </p>
+            </div>
+
+            <div className="relative w-full overflow-hidden rounded-lg shadow-2xl">
+              <img
+                src={previewImage}
+                alt="Your Photo Palette"
+                className="w-full h-auto max-h-[70vh] object-contain mx-auto"
+              />
+            </div>
+            
+            <Button
+              onClick={() => setPreviewImage(null)}
+              className="bg-white text-slate-900 hover:bg-slate-100 w-full"
+            >
+              Đã hiểu
+            </Button>
           </div>
         </div>
       )}
